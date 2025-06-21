@@ -1,0 +1,140 @@
+
+.note-form {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.04),
+    rgba(0, 0, 0, 0.04)
+  );
+  border: 1px solid #ccc;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 2rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+  animation: fadeIn 0.7s ease-in-out;
+  backdrop-filter: blur(6px);
+  transition: background 0.4s, box-shadow 0.4s;
+}
+
+.note-input,
+.note-textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: inherit;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  animation: fadeSlide 0.6s ease forwards;
+}
+
+.note-input:focus,
+.note-textarea:focus {
+  border-color: #7f5af0;
+  box-shadow: 0 0 0 3px rgba(127, 90, 240, 0.3);
+  outline: none;
+}
+
+.note-textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.note-submit {
+  display: inline-block;
+  background: linear-gradient(135deg, #00c6ff, #0072ff);
+  color: #fff;
+  padding: 0.9rem 1.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  animation: bounceIn 0.5s ease-in-out;
+}
+
+.note-submit:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 114, 255, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.8);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .note-form {
+    padding: 1rem;
+  }
+
+  .note-submit {
+    width: 100%;
+    padding: 1rem;
+  }
+}
+/* Inline Toast Styles */
+
+.toast {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  background: #2cb67d;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  z-index: 9999;
+  animation: toastSlide 0.4s ease, toastFadeOut 0.4s ease 2.6s forwards;
+  font-weight: 500;
+}
+
+@keyframes toastSlide {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toastFadeOut {
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
